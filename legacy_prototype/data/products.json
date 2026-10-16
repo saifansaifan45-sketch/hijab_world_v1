@@ -1,0 +1,170 @@
+[
+  {
+    "id": "hijab-grip-classic-onyx",
+    "title": "Hijab Grip™ Honeycomb Band",
+    "subShade": "Classic Onyx Black",
+    "category": "grips",
+    "badge": "FLAGSHIP RELEASE 2025",
+    "editionTag": "IN STOCK • DISPATCHES WITHIN 24H",
+    "orderTag": "Engineered Zero Slipping",
+    "description": "High-elasticity silicone honeycomb matrix designed to keep your hijab firmly in place all day without heavy pressure, headaches, or hairline friction.",
+    "highlights": [
+      "High Elasticity",
+      "Zero Slipping",
+      "Weightless Airflow",
+      "Hypoallergenic Medical Silicone"
+    ],
+    "dimensions": "Universal Contour Ergonomic Fit (52cm - 60cm stretch)",
+    "tactility": "Micro-textured honeycomb suction grip with featherlight open-lattice airflow",
+    "stylistRecommendation": "Recommended for dark hijabs, active workdays, and smooth silk/chiffon drapes.",
+    "careInstructions": "Washable under warm water in 10s • Lifetime elasticity guarantee.",
+    "image": "/assets/images/grip_isolated_black.jpg",
+    "gallery": [
+      "/assets/images/grip_model_wearing.jpg",
+      "/assets/images/grip_isolated_black.jpg",
+      "/assets/images/grip_three_pack_tray.jpg"
+    ],
+    "shades": [
+      {
+        "name": "Classic Onyx Black",
+        "hex": "#1C1C1C",
+        "selected": true,
+        "note": "Recommended for dark hijabs"
+      },
+      {
+        "name": "Warm Caramel Nude",
+        "hex": "#C59B7B",
+        "selected": false,
+        "note": "Blends seamlessly with skin & light undertones"
+      },
+      {
+        "name": "Desert Cream Off-White",
+        "hex": "#EFE8DA",
+        "selected": false,
+        "note": "Clean minimal undertone for white & bridal styling"
+      }
+    ],
+    "featured": true,
+    "capsuleHighlight": true
+  },
+  {
+    "id": "hijab-grip-caramel-nude",
+    "title": "Hijab Grip™ Invisible Nude",
+    "subShade": "Warm Caramel Nude",
+    "category": "grips",
+    "badge": "BEST FOR LIGHT SCARVES",
+    "editionTag": "IN STOCK",
+    "orderTag": "Skin-Tone Seamless",
+    "description": "Matches skin tones and neutral scarves so the grip remains virtually invisible under lightweight silks, modal wraps, and sheer georgettes.",
+    "highlights": [
+      "Invisible Finish",
+      "No Slipping",
+      "Anti-Headache",
+      "Hairline Protection"
+    ],
+    "dimensions": "Universal Contour Ergonomic Fit",
+    "tactility": "Soft skin-friendly silicone lattice, non-pinching",
+    "stylistRecommendation": "Perfect for neutral linen, beige silks, light chiffons, and daily workwear.",
+    "careInstructions": "Rinse under water and let air dry.",
+    "image": "/assets/images/grip_three_pack_tray.jpg",
+    "gallery": [
+      "/assets/images/grip_three_pack_tray.jpg",
+      "/assets/images/grip_model_wearing.jpg"
+    ],
+    "shades": [
+      {
+        "name": "Warm Caramel Nude",
+        "hex": "#C59B7B",
+        "selected": true
+      },
+      {
+        "name": "Classic Onyx Black",
+        "hex": "#1C1C1C",
+        "selected": false
+      },
+      {
+        "name": "Desert Cream Off-White",
+        "hex": "#EFE8DA",
+        "selected": false
+      }
+    ],
+    "featured": true,
+    "capsuleHighlight": true
+  },
+  {
+    "id": "hijab-grip-desert-cream",
+    "title": "Hijab Grip™ Atelier Off-White",
+    "subShade": "Desert Cream Off-White",
+    "category": "grips",
+    "badge": "BRIDAL & WHITE ATELIER",
+    "editionTag": "LOW STOCK",
+    "orderTag": "Occasion & Bridal",
+    "description": "Pristine desert cream shade engineered specifically for bridal hijabs, white silks, and pastel celebration drapes.",
+    "highlights": [
+      "Bridal Choice",
+      "No Pin Punctures Needed",
+      "Zero Tension Headache"
+    ],
+    "dimensions": "Universal Contour Ergonomic Fit",
+    "tactility": "Weightless cellular airflow structure",
+    "stylistRecommendation": "Must-have under pearl ivory silks and celebratory drapes.",
+    "careInstructions": "Wash with mild soap and water.",
+    "image": "/assets/images/grip_three_pack_tray.jpg",
+    "gallery": [
+      "/assets/images/grip_three_pack_tray.jpg"
+    ],
+    "shades": [
+      {
+        "name": "Desert Cream Off-White",
+        "hex": "#EFE8DA",
+        "selected": true
+      },
+      {
+        "name": "Classic Onyx Black",
+        "hex": "#1C1C1C",
+        "selected": false
+      },
+      {
+        "name": "Warm Caramel Nude",
+        "hex": "#C59B7B",
+        "selected": false
+      }
+    ],
+    "featured": true,
+    "capsuleHighlight": true
+  },
+  {
+    "id": "hijab-grip-wardrobe-trio-box",
+    "title": "Curated 3-Pack Wardrobe Box",
+    "subShade": "Trio: Onyx, Caramel & Cream",
+    "category": "bundles",
+    "badge": "BEST VALUE • SAVE 25%",
+    "editionTag": "MOST POPULAR",
+    "orderTag": "Complete Color Capsule",
+    "description": "Contains all 3 essential tones (Classic Onyx Black, Warm Caramel Nude, Desert Cream Off-White). Effortlessly coordinate with any hijab shade in your wardrobe.",
+    "highlights": [
+      "All 3 Tones Included",
+      "Luxury Atelier Storage Tin",
+      "Save 25% Bundle Advantage"
+    ],
+    "dimensions": "3 Universal Grip Bands Included",
+    "tactility": "Triple honeycomb silicone bands",
+    "stylistRecommendation": "The ultimate starter bundle providing the right base for every scarf in your wardrobe.",
+    "careInstructions": "Dishwasher safe on top rack or rinse under tap.",
+    "image": "/assets/images/grip_three_pack_tray.jpg",
+    "gallery": [
+      "/assets/images/grip_three_pack_tray.jpg",
+      "/assets/images/grip_isolated_black.jpg",
+      "/assets/images/grip_model_wearing.jpg"
+    ],
+    "shades": [
+      {
+        "name": "Trio Pack (All 3 Shades)",
+        "hex": "#8C6A5A",
+        "selected": true
+      }
+    ],
+    "featured": true,
+    "capsuleHighlight": true
+  }
+]
