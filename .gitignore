@@ -55,3 +55,6 @@ Thumbs.db
 temp_chunk.txt
 page_raw.html
 scratch-*.js
+
+frontend/.git_backup
+frontend/.git_backup/
