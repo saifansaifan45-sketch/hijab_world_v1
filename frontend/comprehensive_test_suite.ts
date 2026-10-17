@@ -188,6 +188,26 @@ async function runRegressionTests() {
     // Regression: No stray personal email address (rimmu1011)
     const hasPrivateEmail = html.includes('rimmu1011') || html.includes('mailto:');
     record('regression', 'Regression: No unconfigured personal emails or unwanted mailto links', !hasPrivateEmail);
+
+    // Regression: Zero forbidden colour words
+    const lowerHtml = html.toLowerCase();
+    const forbiddenWords = ['deep onyx', 'pure ivory', 'warm caramel', 'warm nude', '3-color', 'color bundle', 'curated tones', 'foundation shade'];
+    const foundForbidden = forbiddenWords.filter((w) => lowerHtml.includes(w));
+    record('regression', 'Regression: Zero forbidden colour shade words in frontend markup', foundForbidden.length === 0, foundForbidden.join(', '));
+
+    // Regression: Black products and Trio pack present
+    const hasTrio = html.includes('Trio Pack: 3 Black Grips');
+    const hasSingleBlack = html.includes('HIJAB GRIP Black');
+    record('regression', 'Regression: Single Black Grip and Trio Pack present', hasTrio && hasSingleBlack);
+
+    // Regression: Real client photos referenced
+    const hasModelPhoto = html.includes('model-olive-hijab-1200') || html.includes('model-olive-hijab-800');
+    const hasCloseupPhoto = html.includes('grip-closeup-800');
+    record('regression', 'Regression: Real client photos integrated in markup', hasModelPhoto && hasCloseupPhoto);
+
+    // Regression: Testimonials block removed
+    const hasTestimonials = html.includes('Mariam K.') || html.includes('Amina Z.');
+    record('regression', 'Regression: Fake testimonials removed from markup', !hasTestimonials);
   } catch (e: any) {
     record('regression', 'Regression checks on frontend document', false, e.message);
   }

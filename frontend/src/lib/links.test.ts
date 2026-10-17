@@ -27,8 +27,8 @@ describe('Contact Links Helpers', () => {
   });
 
   test('productWhatsAppUrl formats message with product name and page url', () => {
-    const url = productWhatsAppUrl('Onyx Black', 'http://localhost:3000/#packs');
-    const expectedMsg = "Hi Hijab World, I'm interested in Onyx Black (http://localhost:3000/#packs).";
+    const url = productWhatsAppUrl('HIJAB GRIP (Black)', 'http://localhost:3000/#packs');
+    const expectedMsg = "Hi Hijab World, I'm interested in HIJAB GRIP (Black) (http://localhost:3000/#packs).";
     assert.strictEqual(url, `https://wa.me/918861720050?text=${encodeURIComponent(expectedMsg)}`);
   });
 });
