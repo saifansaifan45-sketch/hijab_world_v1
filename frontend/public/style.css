@@ -2205,3 +2205,46 @@ h1, h2, h3, h4, .font-serif {
   max-width: 800px;
   margin: 0 auto 32px auto;
 }
+
+
+/* Brand Logo Enhancements */
+.header-logo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  line-height: 0;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.header-brand-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: block;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .header-logo-link {
+    margin-right: 8px;
+  }
+  .header-brand-logo {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.footer-logo-wrap {
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.site-brand-logo-footer-full {
+  width: 140px;
+  height: auto;
+  display: block;
+  border-radius: 50%;
+}
