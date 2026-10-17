@@ -5,13 +5,28 @@ Strips all metadata, crops, scales, and exports optimized WebP & JPEG assets.
 
 import os
 import shutil
-from PIL import Image
+from PIL import Image, ImageFilter, ImageDraw
 
 def strip_metadata(img: Image.Image) -> Image.Image:
     """Create a pristine copy of the image without any EXIF or metadata."""
     clean_img = Image.new(img.mode, img.size)
     clean_img.putdata(list(img.getdata()))
     return clean_img
+
+def apply_privacy_face_blur(img: Image.Image) -> Image.Image:
+    """
+    Applies a tasteful gentle Gaussian blur to the influencer model's face for privacy,
+    while keeping the black Hijab Grip band, undercap, and olive hijab fabric 100% sharp.
+    """
+    w, h = img.size
+    blurred = img.filter(ImageFilter.GaussianBlur(radius=5))
+    mask = Image.new('L', (w, h), 0)
+    draw = ImageDraw.Draw(mask)
+    cx, cy = 415, 385
+    rx, ry = 120, 160
+    draw.ellipse([cx - rx, cy - ry, cx + rx, cy + ry], fill=255)
+    feathered_mask = mask.filter(ImageFilter.GaussianBlur(radius=20))
+    return Image.composite(blurred, img, feathered_mask)
 
 def process_photos():
     orig_dir = os.path.normpath("frontend/design-assets/originals")
@@ -49,6 +64,7 @@ def process_photos():
 
     im_model_raw = Image.open(model_src).convert("RGB")
     im_model = strip_metadata(im_model_raw)
+    im_model = apply_privacy_face_blur(im_model)
 
     # 4:5 Crop: original is 768x1024. For 4:5, height is 768 / 0.8 = 960.
     # The head/grip starts around y=104. Taking y from 48 to 1008 keeps 56px white margin at top.
