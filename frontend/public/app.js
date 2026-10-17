@@ -7,7 +7,6 @@ const App = {
   state: {
     currentView: 'overview',
     activeZone: 1,
-    selectedSingleTone: 'Onyx Black',
     selectedTier: 'trio',
     settings: {},
     zonesData: [
@@ -163,39 +162,24 @@ const App = {
   orderSelectedTierWhatsApp() {
     const isTrio = this.state.selectedTier === 'trio';
     const text = isTrio 
-      ? "Hi Hijab World, I'd like to know more about Hijab Grip (The Everyday Essentials Trio 3-Pack)." 
-      : "Hi Hijab World, I'd like to know more about Hijab Grip (Single Band).";
-    this.openWhatsApp(text, isTrio ? '3-Color Pack Order' : 'Single Band Order');
+      ? "Hi Hijab World, I'd like the Trio Pack of 3 black grips. Could you share today's bundle offer?" 
+      : "Hi Hijab World, I'd like to order the HIJAB GRIP (Black).";
+    this.openWhatsApp(text, isTrio ? 'Trio Pack Order' : 'Single Grip Order');
   },
 
-  // Packs & Tones Radio Selection
-  selectSingleRadio(toneName, element) {
-    this.state.selectedSingleTone = toneName;
-    document.querySelectorAll('.radio-tone-item').forEach(item => item.classList.remove('active'));
-    if (element) element.classList.add('active');
-
-    const btn = document.getElementById('btnSingleWhatsAppAction');
-    if (btn) {
-      btn.innerHTML = `
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-        Ask on WhatsApp for Single Band (${toneName})
-      `;
-    }
-
-    this.trackEvent('inquiry', `Selected Radio Tone: ${toneName}`);
-  },
-
-  orderSingleToneWhatsApp() {
-    const tone = this.state.selectedSingleTone || 'Onyx Black';
-    const currentUrl = window.location.href;
-    const msg = `Hi Hijab World, I'm interested in Hijab Grip Single Band (${tone}) (${currentUrl}).`;
-    this.openWhatsApp(msg, `Single Tone: ${tone}`);
+  orderSingleGripWhatsApp() {
+    const msg = "Hi Hijab World, I'd like to order the HIJAB GRIP (Black).";
+    this.openWhatsApp(msg, 'Single Grip Order');
   },
 
   orderTrioBundleWhatsApp() {
-    const currentUrl = window.location.href;
-    const msg = `Hi Hijab World, I'm interested in The Everyday Essentials Trio (3-Pack Bundle) (${currentUrl}).`;
-    this.openWhatsApp(msg, 'Trio Bundle 3-Pack Order');
+    const msg = "Hi Hijab World, I'd like the Trio Pack of 3 black grips. Could you share today's bundle offer?";
+    this.openWhatsApp(msg, 'Trio Pack Order');
+  },
+
+  orderCollectionGeneralWhatsApp() {
+    const msg = "Hi Hijab World, I'd like to know more about the Hijab Grip.";
+    this.openWhatsApp(msg, 'Collection General Inquiry');
   },
 
   orderSelectedColorWhatsApp() {
@@ -253,7 +237,7 @@ const App = {
   },
 
   showInfoToast() {
-    this.showToast('HIJAB GRIPâ„¢ by Hijab World â€¢ Patented Silicone Grip Architecture');
+    this.showToast('HIJAB GRIP™ by Hijab World • Silicone Grip Architecture');
   },
 
 

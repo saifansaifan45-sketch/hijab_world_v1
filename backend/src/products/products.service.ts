@@ -52,7 +52,7 @@ export class ProductsService {
     if (!category) {
       category = await this.prisma.category.create({
         data: {
-          name: data.categoryName || 'Hijab Grips & Foundations',
+          name: data.categoryName || 'Hijab Grips',
           slug: data.categorySlug || 'grips',
           description: 'Engineered anti-slip undercaps & grips',
         },

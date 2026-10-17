@@ -3,8 +3,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://hijabworld.com"),
-  title: "HIJAB GRIP™ by HIJAB WORLD",
-  description: "Secure Hold, All-Day Comfort",
+  title: "HIJAB GRIP™ - The Black Silicone Grip & Trio Pack | HIJAB WORLD",
+  description: "The black Hijab Grip holds your scarf firmly in place. Available as a single grip and discounted Trio Pack of three. Engineered zero-slip silicone architecture.",
   icons: {
     icon: [
       { url: "/assets/brand/hijab-world-emblem-badge-128.png", sizes: "128x128", type: "image/png" },
@@ -14,8 +14,8 @@ export const metadata: Metadata = {
     apple: "/apple-icon.png",
   },
   openGraph: {
-    title: "HIJAB GRIP™ by HIJAB WORLD",
-    description: "Secure Hold, All-Day Comfort. Engineered zero-slip silicone architecture.",
+    title: "HIJAB GRIP™ - The Black Silicone Grip & Trio Pack | HIJAB WORLD",
+    description: "The black Hijab Grip holds your scarf firmly in place. Available as a single grip and discounted Trio Pack of three. Engineered zero-slip silicone architecture.",
     url: "https://hijabworld.com",
     siteName: "Hijab World",
     images: [
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "HIJAB GRIP™ by HIJAB WORLD",
-    description: "Secure Hold, All-Day Comfort. Engineered zero-slip silicone architecture.",
+    title: "HIJAB GRIP™ - The Black Silicone Grip & Trio Pack | HIJAB WORLD",
+    description: "The black Hijab Grip holds your scarf firmly in place. Available as a single grip and discounted Trio Pack of three. Engineered zero-slip silicone architecture.",
     images: ["/assets/brand/og-image.png"],
   },
 };
@@ -40,6 +40,18 @@ export const metadata: Metadata = {
 export const viewport = {
   width: "device-width",
   initialScale: 1,
+};
+
+const jsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "HIJAB GRIP",
+  "description": "High-elasticity silicone grip band designed to hold headscarves securely in place without pins or hairline friction. Available as a single black grip and a discounted Trio Pack of three black grips.",
+  "brand": {
+    "@type": "Brand",
+    "name": "HIJAB WORLD"
+  },
+  "color": "Black"
 };
 
 export default function RootLayout({
@@ -55,6 +67,10 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-icon.png" />
         <link rel="stylesheet" href="/style.css?v=1791800862987" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body suppressHydrationWarning>
         {children}

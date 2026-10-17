@@ -8,55 +8,61 @@ async function main() {
   // 1. Ensure Category
   const category = await prisma.category.upsert({
     where: { slug: 'grips' },
-    update: {},
+    update: {
+      name: 'Hijab Grips',
+      description: 'Engineered anti-slip undercaps and silicone grip matrices.',
+    },
     create: {
-      name: 'Hijab Grips & Foundations',
+      name: 'Hijab Grips',
       slug: 'grips',
-      description: 'Engineered anti-slip undercaps, silicone lattice matrices, and foundations.',
+      description: 'Engineered anti-slip undercaps and silicone grip matrices.',
     },
   });
 
   // 2. Ensure Flagship Products
   const products = [
     {
-      title: 'Hijab Grip™ Honeycomb Band (Classic Onyx)',
-      slug: 'hijab-grip-classic-onyx',
-      description: 'High-elasticity silicone honeycomb matrix designed to keep your hijab firmly in place all day without heavy pressure, headaches, or hairline friction.',
-      features: ['High Elasticity', 'Zero Slipping', 'Weightless Airflow', 'Hypoallergenic Medical Silicone'],
+      title: 'HIJAB GRIP Black',
+      slug: 'hijab-grip-black',
+      description: 'The black Hijab Grip, worn under your scarf to hold it in place without pins or hairline friction.',
+      features: ['High Elasticity', 'Zero Slipping', 'Weightless Airflow', '100% Silicone Matrix'],
       fabric: '100% Medical Grade Silicone',
-      colors: ['Classic Onyx Black', 'Warm Caramel Nude', 'Desert Cream Off-White'],
-      images: ['/assets/images/grip_model_wearing.jpg', '/assets/images/grip_isolated_black.jpg', '/assets/images/grip_three_pack_tray.jpg'],
+      colors: ['Black'],
+      images: ['/assets/images/grip-closeup-800.webp', '/assets/images/model-olive-hijab-800.webp'],
       isFeatured: true,
       categoryId: category.id,
     },
     {
-      title: 'Hijab Grip™ Invisible Nude',
-      slug: 'hijab-grip-caramel-nude',
-      description: 'Matches skin tones and neutral scarves so the grip remains virtually invisible under lightweight silks, modal wraps, and sheer georgettes.',
-      features: ['Invisible Finish', 'No Slipping', 'Anti-Headache', 'Hairline Protection'],
-      fabric: 'Skin-Adaptive Silicone Matrix',
-      colors: ['Warm Caramel Nude'],
-      images: ['/assets/images/grip_three_pack_tray.jpg', '/assets/images/grip_model_wearing.jpg'],
-      isFeatured: true,
-      categoryId: category.id,
-    },
-    {
-      title: 'The Everyday Essentials Trio (3-Pack Bundle)',
-      slug: 'the-everyday-essentials-trio',
-      description: 'The comprehensive foundation wardrobe box ensuring total invisible grip under any fabric transparency. Includes Onyx Black, Sand Nude, and Pure Ivory.',
-      features: ['Curated 3-Pack', 'Full Tone Wardrobe', 'Washable in 10s', 'Dispatched within 24h'],
+      title: 'Trio Pack: 3 Black Grips',
+      slug: 'black-grip-trio-pack',
+      description: 'Get 3 black grips at a special bundle price. Ask us on WhatsApp for today\'s offer.',
+      features: ['3x Black Grips', 'Bundle Offer', 'Washable in 10s'],
       fabric: '100% Medical Grade Silicone',
-      colors: ['Onyx Black', 'Sand Nude', 'Pure Ivory'],
-      images: ['/assets/images/grip_three_pack_tray.jpg'],
+      colors: ['Black'],
+      images: ['/assets/images/grip-closeup-800.webp'],
       isFeatured: true,
       categoryId: category.id,
     },
   ];
 
+  const allowedSlugs = products.map((p) => p.slug);
+  await prisma.product.deleteMany({
+    where: { slug: { notIn: allowedSlugs } },
+  });
+
   for (const p of products) {
     await prisma.product.upsert({
       where: { slug: p.slug },
-      update: {},
+      update: {
+        title: p.title,
+        description: p.description,
+        features: p.features,
+        fabric: p.fabric,
+        colors: p.colors,
+        images: p.images,
+        isFeatured: p.isFeatured,
+        categoryId: p.categoryId,
+      },
       create: p,
     });
   }

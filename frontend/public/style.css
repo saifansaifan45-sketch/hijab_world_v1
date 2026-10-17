@@ -1901,62 +1901,189 @@ h1, h2, h3, h4, .font-serif {
   border-top: 1px solid var(--border-light);
 }
 
-/* ================= COLLECTION SHADES RESPONSIVE GRID ================= */
-.collection-shades-grid {
+/* ================= COLLECTION VIEW & PRODUCT CARDS ================= */
+.collection-header-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
-  margin-bottom: 24px;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 32px;
 }
-@media (min-width: 640px) {
-  .collection-shades-grid {
-    grid-template-columns: repeat(2, 1fr);
+
+@media (min-width: 900px) {
+  .collection-header-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 36px;
   }
 }
-@media (min-width: 1024px) {
-  .collection-shades-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-.shade-product-card {
+
+.collection-header-photo-card {
   background: #FFFFFF;
   border: 1px solid var(--border-card);
   border-radius: var(--radius-lg);
-  padding: 18px;
-  display: flex;
-  flex-direction: column;
+  padding: 12px;
   box-shadow: var(--shadow-subtle);
+  overflow: hidden;
+  max-height: 640px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.shade-media-wrap {
+
+.collection-header-photo {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  height: 100%;
+  max-height: 616px;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: var(--radius-md);
+  display: block;
+}
+
+@media (max-width: 899px) {
+  .collection-header-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .collection-header-photo-card {
+    order: -1;
+    max-height: 480px;
+    width: 100%;
+  }
+}
+
+/* Horizontal Single Product Card */
+.single-product-horizontal-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-subtle);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+@media (min-width: 680px) {
+  .single-product-horizontal-card {
+    grid-template-columns: 280px 1fr;
+    gap: 28px;
+    padding: 24px;
+  }
+}
+
+.single-media-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
   border-radius: var(--radius-md);
   overflow: hidden;
-  margin-bottom: 14px;
   background: #F4EFEB;
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.shade-media-wrap img {
+
+.single-media-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
-.shade-card-header {
+
+.single-content-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.single-color-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #F5EFEB;
+  color: #2D2521;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 700;
+  width: fit-content;
+  border: 1px solid #E2D7CC;
+}
+
+.single-card-desc {
+  font-size: 0.88rem;
+  color: #5C524C;
+  line-height: 1.5;
+}
+
+/* Anatomy Real Product Close-up Card */
+.anatomy-closeup-card {
+  margin-top: 14px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 8px;
+  gap: 16px;
+  box-shadow: var(--shadow-subtle);
 }
-.shade-card-title {
-  font-size: 1rem;
+
+.anatomy-closeup-media {
+  width: 90px;
+  height: 90px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #F4EFEB;
+  border: 1px solid var(--border-light);
+}
+
+.anatomy-closeup-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.anatomy-closeup-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.anatomy-closeup-tag {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--grip-forest);
+}
+
+.anatomy-closeup-title {
+  font-size: 0.95rem;
   font-weight: 700;
   color: #2D2521;
 }
-.shade-card-desc {
+
+.anatomy-closeup-desc {
   font-size: 0.76rem;
   color: #6E635C;
   line-height: 1.45;
-  margin-bottom: 16px;
-  flex-grow: 1;
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .anatomy-closeup-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .anatomy-closeup-media {
+    width: 100%;
+    height: 160px;
+  }
 }
 
 /* ==========================================================================
